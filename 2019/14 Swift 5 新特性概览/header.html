@@ -1,0 +1,662 @@
+<!doctype html>
+<!-- Please update the following 3 things in this template page for each course. -->
+<!-- 1. Title -->
+<!-- 2. Description -->
+<!-- 3. Js file at the end -->
+<html ng-app="v3App" lang="en">
+<head ng-controller="CourseDetailsController">
+    <meta charset="utf-8">
+    <link href="./img/favicon.png" rel="icon">
+    <!-- UPDATE TEMPLATE 1 -->
+    <title>iPhone手机APP开发与Swift编程 | Coding Minds 编程思维</title>
+    <meta name="keywords" content="ios, swift编程, 手机开发, 青少年编程, 课后编程辅导, 编程思维, 编程竞赛">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UPDATE TEMPLATE 2 -->
+    <meta name="description" content="学习iOS开发，在你的iPhone手机上运行你自己的App应用程序">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i%7CMaterial+Icons" rel="stylesheet">
+
+    <link rel="icon" href="https://codingmindsacademy.com/img/my/logofav.png" mce_href="/https://codingmindsacademy.com/img/my/logofav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://codingmindsacademy.com/img/my/logofav.png" mce_href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://codingmindsacademy.com/img/my/logofav.png" mce_href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://codingmindsacademy.com/img/my/logofav.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://codingmindsacademy.com/img/my/logofav.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://codingmindsacademy.com/img/my/logofav.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://codingmindsacademy.com/img/my/logofav.png" />
+
+    <div style='margin:0 auto;display:none;'>
+        <img src="https://codingmindsacademy.com/img/my/logofav.png" />
+    </div>
+</head>
+
+<body ng-controller="CourseDetailsController">
+    <a id="start"></a>
+    <div style='margin:0 auto;display:none;'>
+        <img src="https://codingmindsacademy.com/img/my/logofav.png" />
+    </div>
+    <div class="nav-container ">
+        <div class="bar bar--sm visible-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="index.html">
+                            <img class="logo logo-dark" alt="logo" src="img/my/logo1.png" />
+                            <img class="logo logo-light" alt="logo" src="img/my/logo1.png" />
+                        </a>
+                    </div>
+                    <div class="col-xs-9 col-sm-10 text-right">
+                        <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs">
+                            <i class="icon icon--sm stack-interface stack-menu"></i>
+                        </a>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </div>
+        <!--end bar-->
+        <nav id="menu1" class="bar bar-1 hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 col-sm-2 hidden-xs">
+                        <div class="bar__module">
+                            <a href="index-cn.html"> <img class="logo logo-dark" alt="logo" src="img/my/logo1.png"> <img class="logo logo-light" alt="logo" src="img/my/logo1.png"> </a>
+                        </div>
+                    </div>
+                    <div class="col-md-11 col-sm-12 text-right text-left-xs text-left-sm">
+                        <div class="bar__module">
+                            <ul class="menu-horizontal text-left">
+                                <li> <a href="index-cn.html">
+                                    首页
+                                </a> </li>
+                                <li> <a href="index-cn.html#summercamp">
+                                    编程课程
+                                </a> </li>
+                                <li> <a href="whycoding-cn.html">
+                                    为什么学习编程
+                                </a> </li>
+                                <li> <a href="about-us-cn.html">
+                                    关于我们
+                                </a> </li>
+                            </ul>
+                        </div>
+                        <div class="bar__module">
+                            <a class="btn btn--sm btn--primary type--uppercase" href="contact-us-cn.html">
+                                <span class="btn__text">
+                                    联系我们
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-container">
+
+        <!-- 1. Top Title Section -->
+        <section class="text-center height-50">
+            <div class="container pos-vertical-center">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <i class="icon icon-Coding color--primary"></i>
+                        <h1>{{cd.topTitleLine1}}<br>{{cd.topTitleLine2}}</h1>
+                        <h3>{{cd.topGradeLevel}}</h3>
+                        <p class="lead">
+                            {{cd.topIntroText}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Top Title Feature Image Section -->
+        <section class="cover height-80 imagebg text-center" data-overlay="4">
+            <div class="background-image-holder">
+                <img alt="background" ng-src="{{cd.bgImageUrl}}" />
+            </div>
+            <div class="container pos-vertical-center">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h1>
+                            {{cd.bgTitle}}
+                        </h1>
+                        <p class="lead">
+                            {{cd.bgText}}
+                        </p>
+                        <div class="modal-instance block">
+                            <div class="video-play-icon video-play-icon--sm modal-trigger"></div>
+                            <span>
+                                <strong>{{cd.bgLearnMoreText}}</strong>
+                            </span>
+                            <div class="modal-container">
+                                <div class="modal-content bg-dark" data-width="60%" data-height="60%">
+                                    <iframe ng-src="{{cd.bgLearnMoreLink}}" allowfullscreen="allowfullscreen"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Course Facts Section -->
+        <section class="text-center height-60">
+            <div class="container pos-vertical-center">
+                <h4><br></h4>
+                <h2 class="text-center">{{cd.aboutTitle}}</h2>
+                <p class="col-sm-6 col-sm-offset-3 lead">
+                    {{cd.aboutText}}
+                </p>
+                <h4><br></h4>
+                <div class="row height-10">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="text-block">
+                            <i class="icon icon--lg icon-Books"></i>
+                            <h4>{{cd.aboutCategoryTitle}}</h4>
+                            <p>
+                                {{cd.aboutCategory}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="text-block">
+                            <i class="icon icon--lg icon-User"></i>
+                            <h4>{{cd.aboutGradeLevelTitle}}</h4>
+                            <p>
+                                {{cd.aboutGradeLevel}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="text-block">
+                            <i class="icon icon--lg icon-Dashboard"></i>
+                            <h4>{{cd.aboutSkillLevelTitle}}</h4>
+                            <p>
+                                {{cd.aboutSkillLevel}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="text-block">
+                            <i class="icon icon--lg icon-Conference"></i>
+                            <h4>{{cd.aboutRatioTitle}}</h4>
+                            <p>
+                                {{cd.aboutRatio}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Course Image Promotion Section (5 Images in Template) -->
+        <section ng-hide="{{!cd.promotion1.enabled}}" class="imageblock switchable feature-large bg--secondary space--sm">
+            <div class="imageblock__content col-md-6 col-sm-4 pos-right">
+                <div class="background-image-holder">
+                    <img alt="image" ng-src="{{cd.promotion1.imageUrl}}" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-7">
+                        <h2>{{cd.promotion1.title}}</h2>
+                        <p class="lead">
+                            {{cd.promotion1.text}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section ng-hide="{{!cd.promotion2.enabled}}" class="imageblock switchable switchable--switch feature-large bg--secondary space--sm">
+            <div class="imageblock__content col-md-6 col-sm-4 pos-right">
+                <div class="background-image-holder">
+                    <img alt="image" ng-src="{{cd.promotion2.imageUrl}}" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-7">
+                        <h2>{{cd.promotion2.title}}</h2>
+                        <p class="lead">
+                            {{cd.promotion2.text}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section ng-hide="{{!cd.promotion3.enabled}}" class="imageblock switchable feature-large bg--secondary space--sm">
+            <div class="imageblock__content col-md-6 col-sm-4 pos-right">
+                <div class="background-image-holder">
+                    <img alt="image" ng-src="{{cd.promotion3.imageUrl}}" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-7">
+                        <h2>{{cd.promotion3.title}}</h2>
+                        <p class="lead">
+                            {{cd.promotion3.text}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section ng-hide="{{!cd.promotion4.enabled}}" class="imageblock switchable switchable--switch feature-large bg--secondary space--sm">
+            <div class="imageblock__content col-md-6 col-sm-4 pos-right">
+                <div class="background-image-holder">
+                    <img alt="image" ng-src="{{cd.promotion4.imageUrl}}" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-7">
+                        <h2>{{cd.promotion4.title}}</h2>
+                        <p class="lead">
+                            {{cd.promotion4.text}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section ng-hide="{{!cd.promotion5.enabled}}" class="imageblock switchable feature-large bg--secondary space--sm">
+            <div class="imageblock__content col-md-6 col-sm-4 pos-right">
+                <div class="background-image-holder">
+                    <img alt="image" ng-src="{{cd.promotion5.imageUrl}}" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-7">
+                        <h2>{{cd.promotion5.title}}</h2>
+                        <p class="lead">
+                            {{cd.promotion5.text}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Course Curriculum (Optional) TODO -->
+        <section ng-hide="{{!cd.curriculum.enabled}}">
+            <div class="container">
+                <div class="text-center">
+                    <i class="icon icon-Calendar-3 color--primary"></i>
+                    <h3 class="text-center">Course Curriculum</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <div class="process-1">
+                            <div class="process__item">
+                                <h4>Chapter 1<br>Introduction to AP CSP and Mobile App Development</h4>
+                                <ul class="bullets">
+                                    <li>Introduction to Computer Science, and AP CSP</li>
+                                    <li>Setup the MIT App Inventor environment</li>
+                                    <li>Write your first APP: Sound Board</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 2<br>MIT App Inventor in Action</h4>
+                                <ul class="bullets">
+                                    <li>App Inventor UI</li>
+                                    <li>Block Programming Language</li>
+                                    <li>Mobile App Development Process</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 3<br>Big Idea I: Creativity</h4>
+                                <ul class="bullets">
+                                    <li>Creative Principles</li>
+                                    <li>Explore Animation, Simulation and Modeling</li>
+                                    <li>App Example: Paint Pot</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 4<br>Big Idea II: Abstraction</h4>
+                                <ul class="bullets">
+                                    <li>Information Hiding</li>
+                                    <li>Computational Complexity</li>
+                                    <li>App Example: Magic 8 Ball</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 5<br>Big Idea III: Data and Information</h4>
+                                <ul class="bullets">
+                                    <li>Data Structures</li>
+                                    <li>The Era of Big Data </li>
+                                    <li>App Example: WeChat Messaging App</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 6<br>Big Idea IV: Algorithms</h4>
+                                <ul class="bullets">
+                                    <li>Input and Output</li>
+                                    <li>Algorithm Design Principles</li>
+                                    <li>App Example: Quiz Test App</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 7<br>Big Idea V: Programming</h4>
+                                <ul class="bullets">
+                                    <li>Programming = Data + Algorithms</li>
+                                    <li>Evaluate and Verify Your Program</li>
+                                    <li>App Example: Reaction Game</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 8<br>Big Idea VI: Internet</h4>
+                                <ul class="bullets">
+                                    <li>Internet Basics</li>
+                                    <li>https Protocol</li>
+                                    <li>App Example: UPC Product Search</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 9<br>Big Idea VII: Global Impact</h4>
+                                <ul class="bullets">
+                                    <li>Problem-based Innovation</li>
+                                    <li>Become a Young Entrepreneur</li>
+                                    <li>Publish Your App to Google Play</li>
+                                </ul>
+                            </div>
+                            <div class="process__item">
+                                <h4>Chapter 10<br>About AP CSP Exam</h4>
+                                <ul class="bullets">
+                                    <li>Overview of AP CSP Exams</li>
+                                    <li>High School Science Fairs</li>
+                                    <li>Where to Go Next</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Course Goals -->
+        <section class="bg--secondary">
+            <div class="container">
+                <h2 class="text-center">{{cd.goalsTitle}}</h2>
+                <div class="row">
+                    <div class="col-sm-4" ng-repeat="goal in cd.goals">
+                        <div class="feature feature-2 boxed boxed--border">
+                            <i class="icon color--primary" ng-class="goal.icon"></i>
+                            <div class="feature__body">
+                                <p>
+                                    {{goal.text}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Course Highlights -->
+        <section class="text-center">
+            <div class="container">
+                <h2 class="text-center">{{cd.highlightsTitle}}</h2>
+                <div class="row">
+                    <div class="col-sm-4" ng-repeat="hl in cd.highlights">
+                        <div class="feature feature-3 boxed boxed--lg boxed--border">
+                            <i class="icon icon--lg color--primary" ng-class="hl.icon"></i>
+                            <h4>{{hl.title}}</h4>
+                            <p>
+                                {{hl.text}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Course Schedule -->
+        <section ng-hide="{{!cd.sessionsEnabled}}" class="switchable bg--secondary">
+            <div class="container">
+                <h2 class="text-center">{{cd.sessionsTitle}}</h2>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <table class="border--round table--alternate-row">
+                            <thead>
+                                <tr>
+                                    <th class="text-center col-sm-4 col-md-4">{{cd.sessionsDateTitle}}</th>
+                                    <th class="text-center col-sm-4 col-md-4">{{cd.sessionsTimeTitle}}</th>
+                                    <th class="text-center col-sm-4 col-md-4">{{cd.sessionsLocationTitle}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="session in cd.sessions">
+                                    <td class="text-center">{{session.date}}</td>
+                                    <td class="text-center">{{session.time}}</td>
+                                    <td class="text-center">{{session.location}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 10. Registration -->
+        <section ng-hide="{{!cd.registrationEnabled}}" class="text-center bg--secondary">
+            <div class="container">
+                <h2 class="text-center">{{cd.registrationTitle}}</h2>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="pricing pricing-1 boxed boxed--lg boxed--border">
+                            <h3>{{cd.priceTitle}}</h3>
+                            <span class="h2"><strong>{{cd.price}}</strong></span>
+                            <span class="type--fine-print">{{cd.allCreditCards}}</span>
+                            <hr>
+                            <ul>
+                                <li ng-repeat="priceItem in cd.priceItems"><span class="checkmark bg--primary-1"></span><span>{{priceItem}}</span></li>
+                            </ul>
+                            <a class="btn btn--primary" href="{{cd.registrationLink}}">
+                                <span class="btn__text">
+                                    {{cd.registerNow}}
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="switchable" ng-repeat="loc in cd.locations">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-5">
+                        <div class="switchable__text">
+                            <h3>{{loc.name}}</h3>
+                            <p class="lead">{{loc.address1}}<br/>{{loc.address2}}</p>
+                            <!-- <h4>Camp Schedule</h4> -->
+                            <p class="lead">如果您需要提前或推后接送学生，请与我们联系，我们会安排专人负责。</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-7 col-xs-12">
+                        <div class="map-container border--round" data-maps-api-key="AIzaSyCW93W_oXeGZBBQ4Bsz2glY2rj-I0eqlCE" data-address="{{loc.addressMap}}" data-marker-title="Stack" data-map-style="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFBB00&quot;},{&quot;saturation&quot;:43.400000000000006},{&quot;lightness&quot;:37.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFC200&quot;},{&quot;saturation&quot;:-61.8},{&quot;lightness&quot;:45.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:51.19999999999999},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:52},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#0078FF&quot;},{&quot;saturation&quot;:-13.200000000000003},{&quot;lightness&quot;:2.4000000000000057},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#00FF6A&quot;},{&quot;saturation&quot;:-1.0989010989011234},{&quot;lightness&quot;:11.200000000000017},{&quot;gamma&quot;:1}]}]" data-map-zoom="12"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 10. FAQs -->
+        <section ng-hide="{{!cd.faq.enabled}}" class="bg--secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="text-block">
+                            <h4>Frequently Asked Questions</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-block">
+                            <h5>How do refunds work?</h5>
+                            <p>
+                                Open a
+                                <a href="#">refund request</a> with us and we can work with you to resolve it ASAP.
+                            </p>
+                        </div>
+                        <div class="text-block">
+                            <h5>Do I need to buy a SPRK robot?</h5>
+                            <p>
+                                No. We will provide a SPRK robot and a tablet for each student to use during the camp.
+                            </p>
+                        </div>
+                        <div class="text-block">
+                            <h5>Is there a bulk-buy discount?</h5>
+                            <p>
+                                We have corporate and enterprise arrangements that our pricing team can assist with on a case-by-case basis.
+                                <a href="#">Contact Us</a> for info.
+                            </p>
+                        </div>
+                        <div class="text-block">
+                            <h5>Is there any programming background required?</h5>
+                            <p>
+                                No. The program has been designed to teach young kids the fundamentals of programming with zero background.
+                            </p>
+                        </div>
+                        <div class="text-block">
+                            <h5>Do I need an SSL certificate?</h5>
+                            <p>
+                                This depends on whether your plan to process the payment on your site or not. We recommend using a third-party provider to unburden yourself.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-block">
+                            <h5>Is there any programming background required?</h5>
+                            <p>
+                                No. The program has been designed to teach young kids the fundamentals of programming with zero background.
+                            </p>
+                        </div>
+                        <div class="text-block">
+                            <h5>Do I need an SSL certificate?</h5>
+                            <p>
+                                This depends on whether your plan to process the payment on your site or not. We recommend using a third-party provider to unburden yourself.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer 1 -->
+        <section class="space--xs imagebg" data-gradient-bg='#4876BD,#5448BD,#8F48BD,#BD48B1'>
+            <div class="container">
+                <div class="row">
+                    <div class="cta cta--horizontal text-center-xs">
+                        <div class="col-sm-9">
+                            <h4>{{cd.promotionText}}</h4>
+                        </div>
+                        <div class="col-sm-3 text-right text-center-xs">
+                            <a class="btn btn--primary type--uppercase" target="_blank" href="{{cd.promotionUrl}}">
+                                <span class="btn__text">
+                                    {{cd.promotionButtonText}}
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer 2 -->
+        <footer class="footer-3 text-center-xs space--xs ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img alt="Image" class="logo" src="img/my/logo1.png" />
+                        <ul class="list-inline list--hover">
+                            <li>
+                                <a href="#">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/cdn-cgi/l/email-protection#4605292832272532060529222f28210b2f28223507252722232b3f6825292b">
+                                    <span class="type--fine-print"><span class="__cf_email__" data-cfemail="3c7f5352485d5f487c7f535855525b715552584f7d5f5d58595145125f5351">[email&#160;protected]</span></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 text-right text-center-xs">
+                        <ul class="social-list list-inline list--hover">
+                            <li>
+                                <a href="#">
+                                    <i class="socicon socicon-google icon icon--xs"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="socicon socicon-twitter icon icon--xs"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/CodingMindsAcademy/" target="_blank">
+                                    <i class="socicon socicon-facebook icon icon--xs"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="socicon socicon-instagram icon icon--xs"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="type--fine-print">
+                            在乐趣中学习编程 | <a href="{{cd.engUrl}}">English</a>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 text-right text-center-xs">
+                        <span class="type--fine-print">&copy;
+                            <span class="update-year"></span> Coding Minds Inc.
+                        </span>
+                        <a class="type--fine-print" href="#">Privacy Policy</a>
+                        <a class="type--fine-print" href="#">Legal</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--<div class="loader"></div>-->
+    <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+        <i class="stack-interface stack-up-open-big"></i>
+    </a>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <!-- UPDATE TEMPLATE 3 -->
+    <script src="course-control/mobileiosc.js"></script>
+    <script src="js/flickity.min.js"></script>
+    <script src="js/easypiechart.min.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/ytplayer.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/granim.min.js"></script>
+    <script src="js/countdown.min.js"></script>
+    <script src="js/twitterfetcher.min.js"></script>
+    <script src="js/spectragram.min.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-98249988-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+</body>
+</html>
